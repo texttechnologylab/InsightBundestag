@@ -11,13 +11,9 @@ import java.util.stream.Collectors;
 public class BundestagFactoryImpl implements BundestagFactory {
 
     protected Set<Abgeordneter> abgeordnetenSet= new HashSet<>(0);
-    protected Set<Abstimmung> abstimmungSet= new HashSet<>(0);
-    protected Set<Mandat> mandatSet = new HashSet<>(0);
 
-    public BundestagFactoryImpl(Set<Abgeordneter> abgeordnetenSet, Set<Abstimmung> abstimmungSet, Set<Mandat> mandatSet){
+    public BundestagFactoryImpl(Set<Abgeordneter> abgeordnetenSet){
             this.abgeordnetenSet = abgeordnetenSet;
-            this.abstimmungSet = abstimmungSet;
-            this.mandatSet = mandatSet;
     }
 
     @Override
@@ -27,7 +23,11 @@ public class BundestagFactoryImpl implements BundestagFactory {
 
     @Override
     public Set<Abstimmung> listAbstimmungen() {
-        return this.abstimmungSet;
+        Set<Abstimmung> rSet = new HashSet<>(0);
+        listAbgeordnete().stream().forEach(a->{
+            rSet.addAll(a.listAbstimmungen());
+        });
+        return rSet;
     }
 
     @Override
@@ -44,8 +44,11 @@ public class BundestagFactoryImpl implements BundestagFactory {
     @Override
     public Set<Fraktion> listFraktionen() {
         Set<Fraktion> rSet = new HashSet<>(0);
-        mandatSet.stream().forEach(m->{
-            rSet.addAll(m.getFraktionen());
+        listAbgeordnete().stream().forEach(a->{
+            a.listMandate().stream().forEach(m->{
+                rSet.addAll(m.getFraktionen());
+            });
+
         });
         return rSet;
     }
@@ -65,7 +68,11 @@ public class BundestagFactoryImpl implements BundestagFactory {
 
     @Override
     public Set<Mandat> listMandate() {
-        return this.mandatSet;
+        Set<Mandat> rSet = new HashSet<>(0);
+            listAbgeordnete().forEach(a->{
+                rSet.addAll(a.listMandate());
+            });
+        return rSet;
     }
 
     @Override
