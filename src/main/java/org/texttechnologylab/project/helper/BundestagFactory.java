@@ -1,6 +1,5 @@
 package org.texttechnologylab.project.helper;
 
-import jdk.incubator.foreign.FunctionDescriptor;
 import org.texttechnologylab.project.data.*;
 
 import java.util.Set;
