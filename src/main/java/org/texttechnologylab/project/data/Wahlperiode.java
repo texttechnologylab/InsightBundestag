@@ -10,4 +10,5 @@ public interface Wahlperiode extends BundestagObject {
     Date getEndDate();
     Set<Mandat> listMandate();
     Set<Mandat> listMandate(Types.MANDAT pType);
+
 }

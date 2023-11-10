@@ -26,7 +26,7 @@ public interface Abgeordneter extends BundestagObject{
     boolean hasMandat(Wahlperiode pValue);
 
     public Set<Mitgliedschaft> listMitgliedschaften();
-    public Set<Ausschuss> listMitgliedschaften(Wahlperiode pValue);
+    public Set<Mitgliedschaft> listMitgliedschaften(Wahlperiode pValue);
 
     public Set<Abstimmung> listAbstimmungen();
 
