@@ -27,5 +27,7 @@ public interface Mandat extends BundestagObject{
 
     public Wahlperiode getWahlperiode();
 
+    public Wahlkreis getWahlkreis();
+
 
 }

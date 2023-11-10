@@ -34,4 +34,5 @@ public interface Abgeordneter extends BundestagObject{
 
     public Set<Abstimmung> listAbstimmungen(Wahlperiode pValue, Types.ABSTIMMUNG pType);
 
+    public Partei getPartei();
 }
