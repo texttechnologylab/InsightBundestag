@@ -15,10 +15,23 @@ public interface Abgeordneter extends BundestagObject{
     public String getGeburtsOrt();
     public Date getSterbeDatum() throws NullPointerException;
     public Types.GESCHLECHT getGeschlecht();
-    public String getRelition();
+    public String getReligion();
     public String getBeruf();
     public String getVita() throws NullPointerException;
 
-    public Set<Mandat> getMandate();
+    public Set<Mandat> listMandate();
+
+    public Set<Mandat> listMandate(Wahlperiode pValue);
+
+    boolean hasMandat(Wahlperiode pValue);
+
+    public Set<Mitgliedschaft> listMitgliedschaften();
+    public Set<Ausschuss> listMitgliedschaften(Wahlperiode pValue);
+
+    public Set<Abstimmung> listAbstimmungen();
+
+    public Set<Abstimmung> listAbstimmungen(Wahlperiode pValue);
+
+    public Set<Abstimmung> listAbstimmungen(Wahlperiode pValue, Types.ABSTIMMUNG pType);
 
 }

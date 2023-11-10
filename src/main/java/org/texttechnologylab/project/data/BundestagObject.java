@@ -10,7 +10,4 @@ public interface BundestagObject extends Comparable<BundestagObject>{
 
     public String getLabel();
 
-    public String setLabel();
-
-
 }
