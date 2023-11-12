@@ -1,7 +1,16 @@
 package org.texttechnologylab.project.data;
 
-public interface Ausschuss extends Gruppe{
+/**
+ * Interface für einen Ausschuss
+ *
+ * @author Giuseppe Abrami
+ */
+public interface Ausschuss extends Gruppe {
 
+    /**
+     * Typ des Ausschusses
+     * @return
+     */
     String getType();
 
 }

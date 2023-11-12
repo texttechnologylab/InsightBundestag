@@ -1,30 +1,22 @@
 package org.texttechnologylab.project.helper;
 
-import org.texttechnologylab.project.data.*;
+import org.texttechnologylab.project.data.Abgeordneter;
+import org.texttechnologylab.project.data.Fraktion;
+import org.texttechnologylab.project.data.Mitgliedschaft;
 
 import java.util.Set;
 
+/**
+ * Interface für die BundestagsFactory als Basis-Interface zur Erweiterung
+ *
+ * @author Giuseppe Abrami
+ */
 public interface BundestagFactory {
 
     Set<Abgeordneter> listAbgeordnete();
 
-    Set<Abstimmung> listAbstimmungen();
-
-    Set<Ausschuss> listAusschuesse();
-
     Set<Fraktion> listFraktionen();
 
-    Set<Gruppe> listGruppen();
-
-    Set<Mandat> listMandate();
-
-    Set<Partei> listParteien();
-
-    Set<Wahlkreis> listWahlkreise();
-
-    Set<Wahlperiode> listWahlperiode();
-
     Set<Mitgliedschaft> listMitgliedschaften();
-
 
 }

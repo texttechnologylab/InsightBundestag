@@ -1,7 +1,19 @@
 package org.texttechnologylab.project.data;
 
-import java.util.Set;
+import java.util.Map;
 
-public interface Fraktion extends Gruppe{
+/**
+ * Interface für eine Fraktion
+ *
+ * @author Giuseppe Abrami
+ */
+public interface Fraktion extends Gruppe {
+
+    /**
+     * Rückgabe aller Funktionsträger
+     *
+     * @return
+     */
+    Map<String, Abgeordneter> getFunktionaere();
 
 }

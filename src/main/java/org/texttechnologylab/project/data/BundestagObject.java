@@ -1,13 +1,22 @@
 package org.texttechnologylab.project.data;
 
 /**
- *
+ * Oberklasse für alle Objekte in der Anwendung *Inside Bundestag*
  * @author Giuseppe Abrami
  */
 public interface BundestagObject extends Comparable<BundestagObject>{
 
-    public long getID();
+    /**
+     * ID des Objektes
+     *
+     * @return
+     */
+    Object getID();
 
-    public String getLabel();
+    /**
+     * Label des Objektes
+     * @return
+     */
+    String getLabel();
 
 }

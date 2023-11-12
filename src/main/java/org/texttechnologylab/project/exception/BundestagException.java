@@ -1,7 +1,7 @@
 package org.texttechnologylab.project.exception;
 
 /**
- *
+ * BundestagsException für Fehler
  * @author Giuseppe Abrami
  */
 public class BundestagException extends Exception{

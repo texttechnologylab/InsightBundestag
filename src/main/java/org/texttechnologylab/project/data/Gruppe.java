@@ -2,9 +2,14 @@ package org.texttechnologylab.project.data;
 
 import java.util.Set;
 
+/**
+ * Interface einer Gruppe
+ *
+ * @author Giuseppe Abrami
+ */
 public interface Gruppe extends BundestagObject{
 
-    public Set<Abgeordneter> getMembers();
+    Set<Abgeordneter> getMembers();
 
 
 }

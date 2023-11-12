@@ -1,33 +1,71 @@
 package org.texttechnologylab.project.data;
 
+import org.texttechnologylab.project.exception.BundestagException;
+
 import java.sql.Date;
 import java.util.Set;
 
 /**
- *
+ * Interface für ein Mandat
  * @author Giuseppe Abrami
  */
 public interface Mandat extends BundestagObject{
 
-    public Abgeordneter getAbgeordneter();
+    /**
+     * Gib den Abgeordneten des Mandates zurück
+     *
+     * @return
+     */
+    Abgeordneter getAbgeordneter();
 
-    public Date fromDate();
+    /**
+     * Beginn des Mandates
+     * @return
+     */
+    Date fromDate();
 
-    public Date toDate();
+    /**
+     * Ende des Mandates
+     * @return
+     */
+    Date toDate();
 
-    public Set<Fraktion> getFraktionen();
+    /**
+     * Liste aller Fraktionen während des Mandates
+     * @return
+     */
+    Set<Fraktion> getFraktionen();
 
-    public Set<Ausschuss> listAusschuesse();
+    /**
+     * Liste aller Ausschüsse während des Mandates
+     * @return
+     */
+    Set<Ausschuss> listAusschuesse();
 
-    public Set<Mitgliedschaft> listMitgliedschaft();
+    /**
+     * Liste aller Mitgliedschaften während eines Mandates
+     * @return
+     */
+    Set<Mitgliedschaft> listMitgliedschaft();
 
-    public Set<Mitgliedschaft> listMitgliedschaft(Gruppe pGruppe);
+    /**
+     * Rückgabe des Mandattypes
+     * @return
+     */
+    Types.MANDAT getTyp();
 
-    public Types.MANDAT getTyp();
+    /**
+     * Wahlperiode des Mandates
+     * @return
+     */
+    Wahlperiode getWahlperiode();
 
-    public Wahlperiode getWahlperiode();
-
-    public Wahlkreis getWahlkreis();
+    /**
+     * Wahlkreis des Mandates
+     *
+     * @return
+     */
+    Wahlkreis getWahlkreis() throws BundestagException;
 
 
 }
